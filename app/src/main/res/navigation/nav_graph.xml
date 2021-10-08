@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/mainFragment">
+
+    <fragment android:id="@+id/mainFragment"
+              android:name="com.kylekruu.proj.MainFragment"
+              android:label="fragment_main"
+              tools:layout="@layout/fragment_main">
+        <action android:id="@+id/action_mainFragment_to_enterNameFragment"
+                app:destination="@id/enterNameFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+        />
+
+        <action android:id="@+id/action_mainFragment_to_viewHelloFragment"
+                app:destination="@id/viewHelloFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+        />
+        <action android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+                app:destination="@id/viewBalanceFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+        />
+    </fragment>
+
+    <fragment android:id="@+id/viewHelloFragment"
+              android:name="com.kylekruu.proj.ViewHelloFragment"
+              android:label="fragment_view_transaction"
+              tools:layout="@layout/fragment_view_hello"/>
+
+
+    <fragment android:id="@+id/enterNameFragment"
+              android:name="com.kylekruu.proj.EnterNameFragment"
+              android:label="fragment_choose_recipient"
+              tools:layout="@layout/fragment_enter_name">
+
+        <action android:id="@+id/action_enterNameFragment_to_enterMothersName"
+                app:destination="@id/enterMothersName"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+        />
+    </fragment>
+
+    <fragment android:id="@+id/viewBalanceFragment"
+              android:name="com.kylekruu.proj.BalanceInquiryFragment"
+              android:label="fragment_view_balance"
+              tools:layout="@layout/fragment_balance_inquiry"/>
+
+    <fragment android:id="@+id/enterMothersName"
+              android:name="com.kylekruu.proj.EnterMothersName"
+              android:label="fragment_specify_amount"
+              tools:layout="@layout/fragment_enter_mothers_name">
+
+        <argument android:name="yourName"
+                  android:defaultValue="None"/>
+
+        <action android:id="@+id/action_enterMothersName_to_confirmationFragment"
+                app:destination="@id/confirmationFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+        />
+    </fragment>
+
+    <fragment android:id="@+id/confirmationFragment"
+              android:name="com.kylekruu.proj.ConfirmationFragment"
+              android:label="fragment_confirmation"
+              tools:layout="@layout/fragment_confirmation">
+
+        <argument android:name="yourName"
+                  android:defaultValue="None"/>
+
+        <argument android:name="mothersName"
+                android:defaultValue="None"/>
+
+    </fragment>
+
+</navigation>
